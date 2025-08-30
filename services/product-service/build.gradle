@@ -1,0 +1,40 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.4'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.miniecom.productservice'
+version = '0.0.1-SNAPSHOT'
+description = 'Product Service for mini eCom'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	runtimeOnly("org.postgresql:postgresql")
+// Kafka
+	implementation("org.springframework.kafka:spring-kafka")
+// Tracing
+	implementation("io.micrometer:micrometer-tracing-bridge-brave")
+	implementation("io.zipkin.reporter2:zipkin-reporter-brave")
+// Environment Variables (.env files)
+	implementation("me.paulschwarz:spring-dotenv:4.0.0")
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+java { toolchain { languageVersion.set(JavaLanguageVersion.of(21)) } }
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
