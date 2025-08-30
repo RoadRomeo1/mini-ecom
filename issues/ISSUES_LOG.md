@@ -218,6 +218,26 @@
 
 ---
 
+## 🔍 **Issue #7: Open Issues Tracker Entry**
+
+### **Problem Description**
+
+- **Date**: August 30, 2025
+- **Status**: 🟡 **OPEN**
+- **Services Affected**: Documentation
+
+### **Goal**
+
+- Create and maintain a dedicated entry for tracking open issues in `issues/ISSUES_LOG.md`.
+
+### **Next Steps**
+
+1. Standardize how new open issues are added to this log
+2. Cross-link any platform issue (e.g., GitHub) to this entry when created
+3. Close this tracker once the workflow is automated
+
+---
+
 ## 📊 **Current Status Summary**
 
 ### **✅ Resolved Issues**
@@ -237,6 +257,7 @@
 
 - Product service not starting properly
 - Need to verify all services can start
+- Maintain open issues tracking entry in `issues/ISSUES_LOG.md`
 
 ---
 
