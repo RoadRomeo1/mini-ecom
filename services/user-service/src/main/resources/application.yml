@@ -5,7 +5,7 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:postgresql://localhost:5433/users
+    url: jdbc:postgresql://localhost:5433/users?options=-c%20TimeZone%3DUTC
     username: user
     password: pass
     driver-class-name: org.postgresql.Driver
@@ -16,6 +16,15 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  cache:
+    type: redis
+    redis:
+      time-to-live: 300000
   kafka:
     bootstrap-servers: localhost:9092
     consumer:

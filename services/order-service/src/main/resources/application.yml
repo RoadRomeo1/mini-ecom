@@ -5,7 +5,7 @@ spring:
   application:
     name: order-service
   datasource:
-    url: jdbc:postgresql://localhost:5434/orders
+    url: jdbc:postgresql://localhost:5434/orders?options=-c%20TimeZone%3DUTC
     username: user
     password: pass
     driver-class-name: org.postgresql.Driver
@@ -16,6 +16,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   kafka:
     bootstrap-servers: localhost:9092
     consumer:

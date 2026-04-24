@@ -33,44 +33,44 @@ services:
 
   # PostgreSQL services for different databases serving diff microservices
   postgres-users:
-    image: postgres:16
+    image: postgres
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: users
     ports:
       - "5433:5432"
-    volumes: ["pgusers:/var/lib/postgresql/data"]
+    volumes: ["pgusers:/var/lib/postgresql"]
 
   postgres-orders:
-    image: postgres:16
+    image: postgres
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: orders
     ports:
       - "5434:5432"
-    volumes: ["pgorders:/var/lib/postgresql/data"]
+    volumes: ["pgorders:/var/lib/postgresql"]
 
   postgres-payments:
-    image: postgres:16
+    image: postgres
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: payments
     ports:
       - "5435:5432"
-    volumes: ["pgpayments:/var/lib/postgresql/data"]
+    volumes: ["pgpayments:/var/lib/postgresql"]
 
   postgres-products:
-    image: postgres:16
+    image: postgres
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: products
     ports:
       - "5436:5432"
-    volumes: ["pgproducts:/var/lib/postgresql/data"]
+    volumes: ["pgproducts:/var/lib/postgresql"]
 
   # mongoDB services for different databases serving diff microservices
   mongo-inventory:

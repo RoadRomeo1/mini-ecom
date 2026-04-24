@@ -26,6 +26,8 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 // Kafka
 	implementation("org.springframework.kafka:spring-kafka")
+// Metrics
+	runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 // Tracing
 	implementation("io.micrometer:micrometer-tracing-bridge-brave")
 	implementation("io.zipkin.reporter2:zipkin-reporter-brave")
@@ -38,3 +40,8 @@ java { toolchain { languageVersion.set(JavaLanguageVersion.of(21)) } }
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.named('bootRun') {
+	jvmArgs = ['-Duser.timezone=UTC']
+}
+
